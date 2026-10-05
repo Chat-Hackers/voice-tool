@@ -1,0 +1,13 @@
+{
+  "id": "voice",
+  "uuid": "8b77b36b-8b80-462c-9708-be6d5b160700",
+  "url": "http://localhost:5055",
+  "emoji": "🎤",
+  "introduction": "React with 🎤 to a message containing the destination url for voice messages.",
+  "title": "Voice Forwarder",
+  "description": "Forwards audio messages to an address of your choice",
+  "event_types": [
+    "m.room.message",
+    "m.reaction"
+  ]
+}

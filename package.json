@@ -1,0 +1,35 @@
+{
+  "name": "voice-tool",
+  "version": "1.0.0",
+  "description": "Voice tool for Chat Hackers groups",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npx tsc",
+    "start": "node dist/src/index.js",
+    "dev": "npm run build && npm start",
+    "dev-web": "vite web",
+    "build-web": "vite build web"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@duckdb/node-api": "^1.4.1-r.1",
+    "express": "^5.1.0",
+    "linkify-it": "^6.1.0",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "react-router": "^7.8.2",
+    "typescript": "^5.6.2",
+    "uuid": "^11.0.5",
+    "vite-plugin-singlefile": "^2.3.0"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.3",
+    "@types/linkify-it": "^5.0.0",
+    "@types/node": "^22.7.4",
+    "@types/react": "^19.1.12",
+    "@types/react-dom": "^19.1.9",
+    "@vitejs/plugin-react-swc": "^4.0.1",
+    "vite": "^7.1.3"
+  }
+}
