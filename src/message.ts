@@ -16,7 +16,7 @@ const handleMessage = async (event: MatrixEvent) => {
     if (groupUrl) {
       fetch(groupUrl.url, {
         body: JSON.stringify({
-          source: "whatsapp",
+          source: "chathackers",
           sender: event.sender,
           group: event.room_id,
           type: "audio",
