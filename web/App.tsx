@@ -1,7 +1,7 @@
 import "./App.css";
 import { useSearchParams } from "react-router";
 import { useEffect, useState } from "react";
-import { getGroupUrl, postGroupUrl } from "./requests";
+import { getGroupUrl, postGroupUrl, deleteGroupUrl } from "./requests";
 
 export default function App() {
   const [searchParams] = useSearchParams();
@@ -27,14 +27,30 @@ export default function App() {
     }
   }
 
+  async function clearGroupUrl() {
+    if (roomId) {
+      await deleteGroupUrl(roomId);
+      setCurrentGroupUrl("");
+      loadGroupUrl(roomId);
+    }
+  }
+
   return (
     <>
       <h1>Voice Forwarding Tool</h1>
       <h3>
         Use the text box below to set the url voice messages will be forward to.
       </h3>
-      <p>The current url is:</p>
-      <p>{currentGroupUrl}</p>
+      {currentGroupUrl ? (
+        <>
+          <p>The current url is:</p>
+          <p>{currentGroupUrl}</p>
+          <button onClick={clearGroupUrl}>Clear url</button>
+        </>
+      ) : (
+        <p>Set a group url:</p>
+      )}
+
       <div id="change-container">
         <textarea
           value={newGroupUrl}

@@ -1,6 +1,6 @@
 {
   "id": "voice",
-  "uuid": "0d70a8a7-fc4a-4061-89b3-dc97d0c6393c",
+  "uuid": "1aaa2e36-12fe-46ba-ac8a-3144cb277485",
   "url": "http://localhost:5055",
   "emoji": "🎤",
   "introduction": "React with 🎤 to a message containing the destination url for voice messages.",

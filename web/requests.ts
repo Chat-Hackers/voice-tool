@@ -19,3 +19,12 @@ export async function postGroupUrl(roomId: string, url: string) {
         }
     })
 }
+
+export async function deleteGroupUrl(roomId: string) {
+    return await fetch(`${BASE_URL}/api/voice?roomId=${roomId}`, {
+        method: "DELETE",
+        headers: {
+            "Content-type": "application/json"
+        }
+    })
+}

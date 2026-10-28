@@ -72,6 +72,14 @@ async function start() {
     res.send({ success: true });
   })
 
+  app.delete("/api/voice", async (req, res) => {
+    const { roomId } = req.query;
+
+    await deleteGroupUrl(roomId as string);
+
+    res.send({ success: true });
+  })
+
   app.listen(port);
 };
 
