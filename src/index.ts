@@ -8,7 +8,7 @@ import { deleteGroupUrl, getGroupUrl, insertGroupUrl, startDuckDB } from "./duck
 
 const port = 5055;
 
-const moduleRegistration = {
+const toolRegistration = {
   id: "voice",
   uuid: uuidv4(),
   url: `http://localhost:${port}`,
@@ -16,13 +16,14 @@ const moduleRegistration = {
   introduction: "React with 🎤 to a message containing the destination url for voice messages.",
   title: "Voice Forwarder",
   description: "Forwards audio messages to an address of your choice",
-  event_types: [
-    "m.room.message", "m.reaction"
-  ]
+  event_types: {
+    active: ["m.reaction"],
+    passive: ["m.room.message"]
+  }
 }
 
 function generateRegistrationFile() {
-  fs.writeFileSync(`./${moduleRegistration.id}.json`, JSON.stringify(moduleRegistration, null, 2));
+  fs.writeFileSync(`./${toolRegistration.id}.json`, JSON.stringify(toolRegistration, null, 2));
 }
 
 async function start() {
